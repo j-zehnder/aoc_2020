@@ -136,4 +136,3 @@ pub fn part2(decks: &Decks) -> usize {
 
     play_recursive_combat(&mut p1_deck, &mut p2_deck)
 }
-

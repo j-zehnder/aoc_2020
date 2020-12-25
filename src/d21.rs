@@ -1,4 +1,4 @@
-use std::collections::{HashSet, HashMap};
+use std::collections::{HashMap, HashSet};
 
 use itertools::Itertools;
 
@@ -149,4 +149,3 @@ pub fn part1(foods: &[Food]) -> usize {
 pub fn part2(foods: &[Food]) -> String {
     solve(foods).1
 }
-
