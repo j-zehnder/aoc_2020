@@ -16,19 +16,19 @@ pub mod d07; // bags of bags
 pub mod d08; // handheld game CPU emulator
 pub mod d09; // XMAS encryption
 pub mod d10; // chaining adapter joltages
-             // pub mod d11;  // Conway 2d
+pub mod d11; // Conway 2d
 pub mod d12; // Ship movement
 pub mod d13; // shuttle timetables, CRT
 pub mod d14; // bitmask
 pub mod d15; // elf memory game
 pub mod d16; // ticket scan
-             // pub mod d17;  // Conway 3d and 4d
+             // pub mod d17; // Conway 3d and 4d
 pub mod d18; // RPN switchup
-             // pub mod d19;  // recursive rules
-             // pub mod d20;  // image data
-pub mod d21;  // allergens
-pub mod d22;  // Combat!
-             // pub mod d23;  // Cups
+             // pub mod d19; // recursive rules
+             // pub mod d20; // image data
+pub mod d21; // allergens
+pub mod d22; // Combat!
+             // pub mod d23; // Cups
 pub mod d24; // Conway 2d Hex
 pub mod d25; // Encryption decode
 
