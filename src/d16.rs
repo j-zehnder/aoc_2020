@@ -107,7 +107,8 @@ pub fn part1(input: &D16Input) -> usize {
 #[aoc(day16, part2)]
 pub fn part2(input: &D16Input) -> usize {
     // filter out nearby that have values invalid for all rules
-    let valid_nearby = input.nearby_tickets
+    let valid_nearby = input
+        .nearby_tickets
         .iter()
         .filter(|i| p2_valid(i, &input.rules))
         .cloned()
