@@ -29,7 +29,12 @@ impl RuleSet {
                     let content_captures = content_re.captures(content_string).unwrap().unwrap();
                     let bag_content = BagContent {
                         name: String::from(content_captures.get(2).unwrap().as_str()),
-                        count: content_captures.get(1).unwrap().as_str().parse::<usize>().unwrap(),
+                        count: content_captures
+                            .get(1)
+                            .unwrap()
+                            .as_str()
+                            .parse::<usize>()
+                            .unwrap(),
                     };
                     contents.push(bag_content);
                 }
@@ -43,7 +48,7 @@ impl RuleSet {
         self.list_bags_containing(search_key).len()
     }
 
-    fn list_bags_containing(&self, search_key: &str) -> HashSet<BagName>{
+    fn list_bags_containing(&self, search_key: &str) -> HashSet<BagName> {
         let mut bags_containing: HashSet<BagName> = HashSet::new();
         for (key, bag_contents) in &self.rules {
             for bag_content in bag_contents {
@@ -77,7 +82,6 @@ pub struct BagContent {
     name: BagName,
     count: usize,
 }
-
 
 #[aoc_generator(day7)]
 pub fn parse_input(input: &str) -> RuleSet {

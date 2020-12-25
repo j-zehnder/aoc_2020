@@ -2,7 +2,10 @@ use std::collections::HashMap;
 
 #[aoc_generator(day15)]
 pub fn parse_input(input: &str) -> Vec<usize> {
-    input.split(',').map(|s| s.parse::<usize>().unwrap()).collect()
+    input
+        .split(',')
+        .map(|s| s.parse::<usize>().unwrap())
+        .collect()
 }
 
 #[aoc(day15, part1)]
@@ -37,4 +40,3 @@ fn memory_game(seed: &[usize], nth: usize) -> usize {
 
     most_recent_said
 }
-

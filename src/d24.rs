@@ -102,7 +102,7 @@ fn seed_board_for_active(tile_directions: &[Vec<Dir>]) -> Vec<HexCoord> {
             tile = tile.get_neighbor(*dir);
         }
 
-         if tile_state.contains_key(&tile) {
+        if tile_state.contains_key(&tile) {
             let state = tile_state.get_mut(&tile).unwrap();
             *state ^= true;
         } else {

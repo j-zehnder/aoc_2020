@@ -2,8 +2,10 @@ use itertools::sorted;
 
 #[aoc_generator(day10)]
 pub fn parse_input(input: &str) -> Vec<usize> {
-
-    let mut entries = input.lines().map(|line| line.parse::<usize>().unwrap()).collect::<Vec<usize>>();
+    let mut entries = input
+        .lines()
+        .map(|line| line.parse::<usize>().unwrap())
+        .collect::<Vec<usize>>();
 
     // add in the first and last values (not in input file...)
     entries.push(0);

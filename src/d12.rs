@@ -6,7 +6,7 @@ pub struct Point {
 
 impl Point {
     fn new(x: i32, y: i32) -> Self {
-        Point {x, y}
+        Point { x, y }
     }
 
     fn manhattan_distance(&self) -> i32 {
@@ -69,8 +69,8 @@ impl Instruction {
                 'F' => Instruction::Move(amount),
                 'L' => Instruction::Rotation(amount),
                 'R' => Instruction::Rotation(-amount),
-                _ => panic!("invalid instruction")
-            }
+                _ => panic!("invalid instruction"),
+            };
         }
         panic!("unable to parse");
     }
@@ -84,14 +84,18 @@ struct Ship {
 
 impl Ship {
     fn new() -> Self {
-        Ship {pos: Point::new(0, 0), waypoint: Point::new(10, 1), facing: Point::new(1,0)}
+        Ship {
+            pos: Point::new(0, 0),
+            waypoint: Point::new(10, 1),
+            facing: Point::new(1, 0),
+        }
     }
 
     fn execute_p1(&mut self, instruction: &Instruction) {
         match instruction {
-            Instruction::Translation(point) => {self.pos += *point},
-            Instruction::Move(amount) => {self.pos += self.facing * *amount},
-            Instruction::Rotation(amount) => {self.facing.rotate(*amount)},
+            Instruction::Translation(point) => self.pos += *point,
+            Instruction::Move(amount) => self.pos += self.facing * *amount,
+            Instruction::Rotation(amount) => self.facing.rotate(*amount),
         }
     }
 
