@@ -6,3 +6,4 @@ Cargo.lock
 perf.*
 *.svg
 input
+skeleton.txt
