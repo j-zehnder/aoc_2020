@@ -22,7 +22,7 @@ pub mod d13; // shuttle timetables, CRT
 pub mod d14; // bitmask
 pub mod d15; // elf memory game
 pub mod d16; // ticket scan
-             // pub mod d17; // Conway 3d and 4d
+pub mod d17; // Conway 3d and 4d
 pub mod d18; // RPN switchup
              // pub mod d19; // recursive rules
              // pub mod d20; // image data
