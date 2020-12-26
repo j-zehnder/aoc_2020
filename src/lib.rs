@@ -28,7 +28,8 @@ pub mod d18; // RPN switchup
              // pub mod d20; // image data
 pub mod d21; // allergens
 pub mod d22; // Combat!
-             // pub mod d23; // Cups
+pub mod d23_1; // Cups p1
+pub mod d23_2; // Cups p2
 pub mod d24; // Conway 2d Hex
 pub mod d25; // Encryption decode
 
