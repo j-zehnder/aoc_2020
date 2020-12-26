@@ -58,5 +58,3 @@ pub fn part1(input: &str) -> String {
     it.next();
     it.join("")
 }
-
-

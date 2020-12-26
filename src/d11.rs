@@ -160,12 +160,9 @@ fn total_occupied_tiles(tiles: &[Vec<Tile>]) -> usize {
 
 #[aoc_generator(day11)]
 pub fn parse_input(input: &str) -> Vec<Vec<Tile>> {
-    input.lines()
-        .map(|line| {
-            line.chars()
-                .map(Tile::from_char)
-                .collect::<Vec<Tile>>()
-        })
+    input
+        .lines()
+        .map(|line| line.chars().map(Tile::from_char).collect::<Vec<Tile>>())
         .collect::<Vec<Vec<Tile>>>()
 }
 

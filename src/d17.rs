@@ -2,7 +2,10 @@ use std::collections::{HashMap, HashSet};
 use std::hash::Hash;
 
 fn parse_input_3d(input: &str, width: usize, height: usize) -> Conway<Coord3D> {
-    let lines = input.lines().map(|l| l.to_string()).collect::<Vec<String>>();
+    let lines = input
+        .lines()
+        .map(|l| l.to_string())
+        .collect::<Vec<String>>();
 
     let mut coords = Vec::new();
     for y in 0..height {
@@ -26,7 +29,10 @@ fn parse_input_3d(input: &str, width: usize, height: usize) -> Conway<Coord3D> {
 }
 
 fn parse_input_4d(input: &str, width: usize, height: usize) -> Conway<Coord4D> {
-    let lines = input.lines().map(|l| l.to_string()).collect::<Vec<String>>();
+    let lines = input
+        .lines()
+        .map(|l| l.to_string())
+        .collect::<Vec<String>>();
 
     let mut coords = Vec::new();
     for y in 0..height {
@@ -53,8 +59,8 @@ fn parse_input_4d(input: &str, width: usize, height: usize) -> Conway<Coord4D> {
 
 trait Coord {
     fn get_adjacent(&self) -> Vec<Self>
-        where
-            Self: Sized;
+    where
+        Self: Sized;
 }
 
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
@@ -64,21 +70,21 @@ enum State {
 }
 
 struct Conway<T>
-    where
-        T: Hash,
-        T: Eq,
-        T: Coord,
-        T: Clone,
+where
+    T: Hash,
+    T: Eq,
+    T: Coord,
+    T: Clone,
 {
     coords: HashMap<T, State>,
 }
 
 impl<T> Conway<T>
-    where
-        T: Hash,
-        T: Eq,
-        T: Coord,
-        T: Clone,
+where
+    T: Hash,
+    T: Eq,
+    T: Coord,
+    T: Clone,
 {
     fn new() -> Self {
         Self {
@@ -171,8 +177,8 @@ impl Coord3D {
 
 impl Coord for Coord3D {
     fn get_adjacent(&self) -> Vec<Self>
-        where
-            Self: Sized,
+    where
+        Self: Sized,
     {
         let mut coords: Vec<Self> = Vec::new();
         for x in -1..2 {
@@ -221,8 +227,6 @@ impl Coord for Coord4D {
         coords
     }
 }
-
-
 
 #[aoc(day17, part1)]
 pub fn part1(input: &str) -> usize {

@@ -24,8 +24,8 @@ pub mod d15; // elf memory game
 pub mod d16; // ticket scan
 pub mod d17; // Conway 3d and 4d
 pub mod d18; // RPN switchup
-             // pub mod d19; // recursive rules
-             // pub mod d20; // image data
+pub mod d19; // recursive rules
+pub mod d20; // image assembly
 pub mod d21; // allergens
 pub mod d22; // Combat!
 pub mod d23_1; // Cups p1

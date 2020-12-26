@@ -83,4 +83,3 @@ pub fn part2(input: &str) -> usize {
     let b = cups.cups[a];
     a * b
 }
-
