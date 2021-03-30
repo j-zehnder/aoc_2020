@@ -37,8 +37,7 @@ pub fn part1(entries: &[usize]) -> usize {
 pub fn part2(entries: &[usize]) -> usize {
     // split into chains of sequential numbers
     let mut chains: Vec<Vec<usize>> = Vec::new();
-    let mut cur_chain: Vec<usize> = Vec::new();
-    cur_chain.push(0);
+    let mut cur_chain: Vec<usize> = vec![0];
 
     entries.windows(2).for_each(|w| {
         if w[1] == w[0] + 3 {

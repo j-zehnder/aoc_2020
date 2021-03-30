@@ -57,7 +57,7 @@ impl Passport {
             .expect("expected byr")
             .parse::<usize>()
             .expect("parse error byr");
-        let byr_valid = byr >= 1920 && byr <= 2002;
+        let byr_valid = (1920..=2002).contains(&byr);
 
         // iyr (Issue Year) - four digits; at least 2010 and at most 2020.
         let iyr = self
@@ -66,7 +66,7 @@ impl Passport {
             .expect("expected iyr")
             .parse::<usize>()
             .expect("parse error iyr");
-        let iyr_valid = iyr >= 2010 && iyr <= 2020;
+        let iyr_valid = (2010..=2020).contains(&iyr);
 
         // eyr (Expiration Year) - four digits; at least 2020 and at most 2030.
         let eyr = self
@@ -75,7 +75,7 @@ impl Passport {
             .expect("expected eyr")
             .parse::<usize>()
             .expect("parse error eyr");
-        let eyr_valid = eyr >= 2020 && eyr <= 2030;
+        let eyr_valid = (2020..=2030).contains(&eyr);
 
         // hgt (Height) - a number followed by either cm or in:
         // If cm, the number must be at least 150 and at most 193.
@@ -97,7 +97,7 @@ impl Passport {
                     .as_str()
                     .parse::<usize>()
                     .expect("expected a number");
-                if hgt >= 150 && hgt <= 193 {
+                if (150..=193).contains(&hgt) {
                     hgt_valid = true;
                 }
             } else if captures.get(2).expect("expected cm/in").as_str() == "in" {
@@ -107,7 +107,7 @@ impl Passport {
                     .as_str()
                     .parse::<usize>()
                     .expect("expected a number");
-                if hgt >= 59 && hgt <= 76 {
+                if (59..=76).contains(&hgt) {
                     hgt_valid = true;
                 }
             } else {

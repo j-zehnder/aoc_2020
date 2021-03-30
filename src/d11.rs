@@ -167,7 +167,7 @@ pub fn parse_input(input: &str) -> Vec<Vec<Tile>> {
 }
 
 #[aoc(day11, part1)]
-pub fn part1(tiles: &Vec<Vec<Tile>>) -> usize {
+pub fn part1(tiles: &[Vec<Tile>]) -> usize {
     let map = tiles.to_vec();
     let mut result = Some(map);
     while result != None {
@@ -181,7 +181,7 @@ pub fn part1(tiles: &Vec<Vec<Tile>>) -> usize {
 }
 
 #[aoc(day11, part2)]
-pub fn part2(tiles: &Vec<Vec<Tile>>) -> usize {
+pub fn part2(tiles: &[Vec<Tile>]) -> usize {
     let map = tiles.to_vec();
     let mut result = Some(map);
     while result != None {

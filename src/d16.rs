@@ -140,7 +140,7 @@ pub fn part2(input: &D16Input) -> usize {
             // prime with keys, and set counts to zero
             let mut possible_rules: HashMap<String, usize> = rules_to_solve
                 .iter()
-                .map(|r| (r.clone(), 0 as usize))
+                .map(|r| (r.clone(), 0_usize))
                 .collect();
 
             for rule_name in &rules_to_solve {

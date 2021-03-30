@@ -47,7 +47,7 @@ enum Token {
 
 impl Token {
     fn from_char(c: char) -> Self {
-        return if c.is_numeric() {
+        if c.is_numeric() {
             Self::Num(c.to_digit(10).unwrap() as u64)
         } else if c == '(' {
             Self::LParen
@@ -55,7 +55,7 @@ impl Token {
             Self::RParen
         } else {
             Self::Op(Op::from_char(c))
-        };
+        }
     }
 }
 
@@ -69,7 +69,7 @@ fn tokenize(equation: &str) -> Vec<Token> {
     equation
         .chars()
         .filter(|c| !c.is_whitespace())
-        .map(|c| Token::from_char(c))
+        .map(Token::from_char)
         .collect::<Vec<Token>>()
 }
 

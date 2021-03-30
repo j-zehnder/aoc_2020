@@ -79,16 +79,14 @@ impl Coord for HexCoord {
     where
         Self: Sized,
     {
-        let mut adjacent: Vec<Self> = Vec::new();
-
-        adjacent.push(self.get_neighbor(East));
-        adjacent.push(self.get_neighbor(SouthEast));
-        adjacent.push(self.get_neighbor(SouthWest));
-        adjacent.push(self.get_neighbor(West));
-        adjacent.push(self.get_neighbor(NorthEast));
-        adjacent.push(self.get_neighbor(NorthWest));
-
-        adjacent
+        vec![
+            self.get_neighbor(East),
+            self.get_neighbor(SouthEast),
+            self.get_neighbor(SouthWest),
+            self.get_neighbor(West),
+            self.get_neighbor(NorthEast),
+            self.get_neighbor(NorthWest),
+        ]
     }
 }
 
@@ -108,6 +106,7 @@ fn seed_board_for_active(tile_directions: &[Vec<Dir>]) -> Vec<HexCoord> {
         } else {
             tile_state.insert(tile, true);
         }
+
     }
 
     tile_state

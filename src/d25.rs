@@ -4,8 +4,8 @@ fn transform_subject(num: usize, loop_size: usize) -> usize {
     let mut result = 1;
 
     for _ in 0..loop_size {
-        result = result * num;
-        result = result % 20201227;
+        result *= num;
+        result %= 20201227;
     }
 
     result

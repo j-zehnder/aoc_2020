@@ -26,14 +26,14 @@ impl Instruction {
     }
 }
 
-struct CPU {
+struct Cpu {
     mask: String,
     mem: HashMap<usize, usize>,
 }
 
-impl CPU {
+impl Cpu {
     fn new() -> Self {
-        CPU {
+        Cpu {
             mask: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX".to_string(),
             mem: HashMap::new(),
         }
@@ -78,8 +78,7 @@ impl CPU {
 fn apply_mask(mask: String, mem: usize) -> Vec<usize> {
     let memstr = format!("{:036b}", mem);
 
-    let mut addresses: Vec<String> = Vec::new();
-    addresses.push("".to_string());
+    let mut addresses: Vec<String> = vec!["".to_string()];
 
     mask.chars()
         .into_iter()
@@ -128,14 +127,14 @@ pub fn parse_input(input: &str) -> Vec<Instruction> {
 
 #[aoc(day14, part1)]
 pub fn part1(instructions: &[Instruction]) -> usize {
-    let mut cpu = CPU::new();
+    let mut cpu = Cpu::new();
     instructions.iter().for_each(|i| cpu.process(i));
     cpu.mem.values().sum()
 }
 
 #[aoc(day14, part2)]
 pub fn part2(instructions: &[Instruction]) -> usize {
-    let mut cpu = CPU::new();
+    let mut cpu = Cpu::new();
     instructions.iter().for_each(|i| cpu.process2(i));
     cpu.mem.values().sum()
 }

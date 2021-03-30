@@ -24,7 +24,7 @@ impl RuleSet {
             let mut contents: Vec<BagContent> = Vec::new();
 
             if contents_string != "no other bags" {
-                for content_string in contents_string.split(",") {
+                for content_string in contents_string.split(',') {
                     let content_string = content_string.trim();
                     let content_captures = content_re.captures(content_string).unwrap().unwrap();
                     let bag_content = BagContent {
